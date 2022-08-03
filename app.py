@@ -8,7 +8,7 @@ import pandas as pd
 import plotly.graph_objs as go
 import plotly.express as px
 from dash.dependencies import Input,Output,State
-import model
+from .model import train_model
 
 app=dash.Dash(__name__)
 server=app.server
@@ -116,7 +116,7 @@ def plot_predictor_graph(n,n_days,val):
     today=date.today()
     print(type(n_days))
     dates=pd.date_range(today,periods=int(n_days)).tolist()
-    predicted_price=model.train_model(val,today,int(n_days))
+    predicted_price=train_model(val,today,int(n_days))
     data={'Dates':dates,'Price':predicted_price}
     df=pd.DataFrame(data)
     print(df)
