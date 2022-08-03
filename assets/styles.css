@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+}
+.nav {
+    width: 25vw;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: rgb(5, 107, 107);
+
+}
+* {
+    font-family:"Roboto",sans-serif;
+}
+.stock {
+    margin-bottom: 10%;
+}
+.btn {
+    margin-left: 10%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+.days {
+    margin-left: 10%;
+}
+.start{
+    text-align: center;
+}
+.content {
+    margin-left:10% ;
+    
+}
