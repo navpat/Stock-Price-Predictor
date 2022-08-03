@@ -1,1 +1,1 @@
-web: gunicorn STOCK-DASH.app:server
+web: gunicorn app:server
