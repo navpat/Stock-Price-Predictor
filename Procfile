@@ -1,1 +1,1 @@
-web: gunicorn app:server
+web: gunicorn STOCK-DASH.app:server --pythonpath:./STOCK-DASH
