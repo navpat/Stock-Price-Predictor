@@ -64,5 +64,5 @@ def my_custom_MAPE(clf, X_val, y_true,epsilon):
 #today=date.today()
 #d1=today.strftime("%Y-%m-%d")
 #print(d1)
-#print(train_model("AAPL",d1,20))
+#print(train_model("GE",d1,10))
 
