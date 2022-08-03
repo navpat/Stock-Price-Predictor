@@ -8,7 +8,7 @@ import pandas as pd
 import plotly.graph_objs as go
 import plotly.express as px
 from dash.dependencies import Input,Output,State
-from .model import train_model
+from model import train_model
 
 app=dash.Dash(__name__)
 server=app.server
