@@ -4,6 +4,7 @@ import numpy as np
 from sklearn.svm import SVR
 from sklearn.model_selection import train_test_split,GridSearchCV,cross_validate
 from sklearn.utils import shuffle
+from sklearn.metrics import mean_absolute_percentage_error
 from datetime import date
 
 
@@ -45,10 +46,10 @@ def train_model(val,end_date,n_days_predict):
                'squared_error': 'neg_mean_squared_error'}
     scores=cross_validate(best_svr,X,Y, cv=10,scoring=scoring,return_train_score=True)
     svm_prediction=rbf_svr.predict(X_forecast)
+    #print("MAE :", abs(scores['test_abs_error'].mean()), "| RMSE :", math.sqrt(abs(scores['test_squared_error'].mean())),"| MAPE :", my_custom_MAPE(best_svr,X,Y))
     return svm_prediction.tolist()
-    #return "MAE :", abs(scores['test_abs_error'].mean()), "| RMSE :", math.sqrt(abs(scores['test_squared_error'].mean())),"| MAPE :", my_custom_MAPE(best_svr,X,Y,best_params["epsilon"])
 
-def my_custom_MAPE(clf, X_val, y_true,epsilon):
+def my_custom_MAPE(clf, X_val, y_true,epsilon=0.000001):
       y_pred = clf.predict(X_val)
       ii = 0
       for i in y_true:

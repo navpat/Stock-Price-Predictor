@@ -119,7 +119,7 @@ def plot_predictor_graph(n,n_days,val):
     predicted_price=train_model(val,today,int(n_days))
     data={'Dates':dates,'Price':predicted_price}
     df=pd.DataFrame(data)
-    print(df)
+    #print(df)
     fig=plot_points(df)
     return fig
 
